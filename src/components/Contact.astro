@@ -6,51 +6,63 @@
         Open to new opportunities. If you have a role or project in mind, feel free to reach out.
       </p>
       <div class="socials">
-        <a href="mailto:leonardogarcarr23@gmail.com" target="_blank" rel="noreferrer">Gmail</a>
-        <a href="https://github.com/leonardog01" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/leonardog01/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="social-btn gmail" href="mailto:leonardogarcarr23@gmail.com" target="_blank" rel="noreferrer">
+          <img src="/icons/gmail.svg" alt="" aria-hidden="true" loading="lazy" />
+          <span>Gmail</span>
+        </a>
+        <a class="social-btn github" href="https://github.com/leonardog01" target="_blank" rel="noreferrer">
+          <img src="/icons/github.svg" alt="" aria-hidden="true" loading="lazy" />
+          <span>GitHub</span>
+        </a>
+        <a class="social-btn linkedin" href="https://www.linkedin.com/in/leonardog01/" target="_blank" rel="noreferrer">
+          <img src="/icons/linkedin.svg" alt="" aria-hidden="true" loading="lazy" />
+          <span>LinkedIn</span>
+        </a>
       </div>
+      <p class="contact-note">Let's build something amazing</p>
     </div>
-    <form id="contact-form" class="contact-form">
-      <label>
-        Name
-        <input type="text" name="name" required />
-      </label>
-      <label>
-        Email
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Message
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
   </div>
 </section>
 
 <style>
   .contact-wrap { display: grid; gap: 1.25rem; }
-  .socials { display: flex; gap: 1rem; flex-wrap: wrap; }
-  .socials a { color: var(--primary); font-weight: 700; }
-  .contact-form {
-    background: var(--surface);
-    border: 1px solid var(--border);
+  .socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
     border-radius: 14px;
-    padding: 1rem;
-    display: grid;
-    gap: 0.8rem;
+    padding: 0.9rem 1.2rem;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: var(--shadow);
   }
-  label { display: grid; gap: 0.35rem; font-weight: 600; }
-  input, textarea {
-    background: var(--bg);
-    color: var(--text);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.65rem 0.8rem;
-    font: inherit;
+  .social-btn img {
+    width: 22px;
+    height: 22px;
   }
-  @media (min-width: 900px) {
-    .contact-wrap { grid-template-columns: 1fr 1fr; align-items: start; }
+  .social-btn.gmail { background: #ea4335; }
+  .social-btn.github { background: #171515; }
+  .social-btn.linkedin { background: #0a66c2; }
+  .social-btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.07);
+  }
+  .contact-note {
+    margin: 1.15rem 0 0;
+    color: var(--muted);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  @media (min-width: 768px) {
+    .social-btn {
+      padding: 1rem 1.35rem;
+      font-size: 1.1rem;
+    }
   }
 </style>
