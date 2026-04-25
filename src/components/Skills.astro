@@ -1,0 +1,111 @@
+---
+const skillGroups = [
+  {
+    title: "UX/UI and Graphic Design",
+    badges: [
+      { name: "Figma", src: "https://img.shields.io/badge/Figma-%23F44E1E.svg?style=for-the-badge&logo=figma&logoColor=white" },
+      { name: "Adobe Illustrator", src: "https://img.shields.io/badge/Adobe_Illustrator-%23FF9A00.svg?style=for-the-badge&logo=adobeillustrator&logoColor=white" },
+      { name: "Adobe Photoshop", src: "https://img.shields.io/badge/Adobe_Photoshop-%2331A8FF.svg?style=for-the-badge&logo=adobephotoshop&logoColor=white" }
+    ]
+  },
+  {
+    title: "Frontend",
+    badges: [
+      { name: "HTML5", src: "https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" },
+      { name: "CSS3", src: "https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" },
+      { name: "JavaScript", src: "https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" },
+      { name: "TypeScript", src: "https://img.shields.io/badge/TypeScript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" },
+      { name: "Tailwind CSS", src: "https://img.shields.io/badge/Tailwind_CSS-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" },
+      { name: "Angular", src: "https://img.shields.io/badge/angular-%23DD0031.svg?style=for-the-badge&logo=angular&logoColor=white" },
+      { name: "Astro", src: "https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white" }
+    ]
+  },
+  {
+    title: "Backend",
+    badges: [
+      { name: "Express.js", src: "https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" }
+    ]
+  },
+  {
+    title: "Databases",
+    badges: [
+      { name: "MongoDB", src: "https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" }
+    ]
+  },
+  {
+    title: "GameDev",
+    badges: [
+      { name: "Godot", src: "https://img.shields.io/badge/Godot-%23478CBF.svg?style=for-the-badge&logo=godotengine&logoColor=white" },
+      { name: "GameMaker Studio", src: "https://img.shields.io/badge/GameMaker_Studio-%23E60000.svg?style=for-the-badge&logo=gamemaker&logoColor=white" }
+    ]
+  },
+  {
+    title: "AI",
+    badges: [
+      { name: "ChatGPT", src: "https://img.shields.io/badge/ChatGPT-282828?style=for-the-badge&logo=openaigym&logoColor=white" },
+      { name: "Claude", src: "https://img.shields.io/badge/Claude-000000?style=for-the-badge&logo=claude&logoColor=white" },
+      { name: "Prompt Engineering", src: "https://img.shields.io/badge/Prompt_Engineering-00aacc?style=for-the-badge&logoColor=white" }
+    ]
+  },
+  {
+    title: "Tools and Platforms",
+    badges: [
+      { name: "Git", src: "https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" },
+      { name: "GitHub", src: "https://img.shields.io/badge/GitHub-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" },
+      { name: "Cursor", src: "https://img.shields.io/badge/Cursor-%231572B6.svg?style=for-the-badge&logo=cursor&logoColor=white" },
+      { name: "Visual Paradigm", src: "https://img.shields.io/badge/Visual_Paradigm-%230A1C28.svg?style=for-the-badge&logo=visualparadigm&logoColor=white" }
+    ]
+  }
+];
+---
+
+<section id="skills" class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">Technologies and tools I use to deliver production-ready software.</p>
+    <div class="skill-grid">
+      {skillGroups.map((group) => (
+        <article class="skill-row">
+          <h3>{group.title}</h3>
+          <div class="badges-row">
+            {group.badges.map((badge) => (
+              <img class="skill-badge" src={badge.src} alt={badge.name} loading="lazy" />
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-grid {
+    display: grid;
+    gap: 1rem;
+  }
+  .skill-row {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+  }
+  .skill-row h3 {
+    margin: 0 0 0.75rem;
+    color: var(--text);
+    font-size: 1rem;
+  }
+  .badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+  .skill-badge {
+    height: 34px;
+    width: auto;
+    border-radius: 999px;
+    transition: transform 0.2s ease-in-out;
+  }
+  .skill-badge:hover {
+    transform: translateY(-2px) scale(1.02);
+  }
+</style>

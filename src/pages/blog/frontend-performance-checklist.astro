@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Frontend Performance Checklist | Blog">
+  <main class="section">
+    <article class="container post-content">
+      <p><a href="/blog" class="back-link">← Back to Blog</a></p>
+      <h1>Frontend Performance Checklist</h1>
+      <p class="meta">Feb 25, 2026</p>
+      <p>
+        Strong performance comes from repeated small decisions: optimized media, lean CSS, and reduced
+        JavaScript execution.
+      </p>
+      <p>
+        Prioritize what users see first, lazy-load non-critical assets, and validate improvements with
+        real performance metrics.
+      </p>
+      <p>
+        A fast experience increases user trust, engagement, and conversion across devices.
+      </p>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .post-content {
+    max-width: 760px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .meta { color: var(--muted); margin-top: -0.25rem; }
+  .back-link { color: var(--secondary); font-weight: 700; }
+</style>

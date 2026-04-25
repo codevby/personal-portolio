@@ -1,0 +1,55 @@
+---
+const projects = [
+  {
+    title: "MyParadaysTravel",
+    description: "Vacation travel agency website with service showcase, business information, and conversion-focused content.",
+    tech: ["Angular", "Express.js", "MongoDB"],
+    image: "/images/projects/project-1.svg",
+    demo: "https://myparadaystravel.com/",
+    demoLabel: "Live Demo"
+  }
+];
+---
+
+<section id="projects" class="section reveal">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">A selection of software and creative projects I have worked on.</p>
+    <div class="grid cards">
+      {projects.map((project) => (
+        <article class="card">
+          <img src={project.image} alt={`${project.title} cover`} loading="lazy" />
+          <div class="card-content">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <p class="tech">{project.tech.join(" • ")}</p>
+            <div class="links">
+              <a href={project.demo} target="_blank" rel="noreferrer">{project.demoLabel}</a>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cards { grid-template-columns: 1fr; }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .card-content { padding: 1rem; }
+  .card h3 { margin: 0 0 0.3rem; }
+  .card p { margin: 0.45rem 0; color: var(--muted); }
+  .tech { font-weight: 700; color: var(--text); font-size: 0.95rem; }
+  .links { display: flex; gap: 1rem; margin-top: 0.8rem; }
+  .links a { color: var(--primary); font-weight: 700; }
+  .links a:hover { color: var(--secondary); }
+  @media (min-width: 768px) {
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>

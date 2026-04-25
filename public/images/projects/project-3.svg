@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a90ff"/>
+      <stop offset="100%" stop-color="#20be9b"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="#0f1d3a"/>
+  <path d="M60 280L160 170L260 230L360 120L460 190L560 100" stroke="url(#g3)" stroke-width="10" fill="none" />
+  <text x="70" y="320" fill="#dce6ff" font-size="38" font-family="Arial">Insight Metrics</text>
+</svg>

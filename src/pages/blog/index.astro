@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+const entries = [
+  {
+    title: "Building Scalable APIs with Node.js",
+    description: "A practical guide to structuring APIs for reliability and growth.",
+    date: "Mar 12, 2026",
+    href: "/blog/building-scalable-apis"
+  },
+  {
+    title: "Frontend Performance Checklist",
+    description: "Simple optimizations that improve speed and user experience.",
+    date: "Feb 25, 2026",
+    href: "/blog/frontend-performance-checklist"
+  }
+];
+---
+
+<BaseLayout title="Blog | Leonardo Garcia">
+  <main class="section">
+    <div class="container">
+      <h1 class="section-title">Blog</h1>
+      <p class="section-subtitle">Notes about software development, architecture, and performance.</p>
+      <div class="posts">
+        {entries.map((entry) => (
+          <article class="post">
+            <h2><a href={entry.href}>{entry.title}</a></h2>
+            <p>{entry.description}</p>
+            <small>{entry.date}</small>
+          </article>
+        ))}
+      </div>
+      <p><a href="/" class="back-link">← Back to Home</a></p>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .posts { display: grid; gap: 1rem; }
+  .post {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    background: var(--surface);
+  }
+  .post h2 { margin: 0 0 0.4rem; }
+  .post p { margin: 0 0 0.6rem; color: var(--muted); }
+  .post a { color: var(--primary); }
+  .back-link { color: var(--secondary); font-weight: 700; }
+</style>

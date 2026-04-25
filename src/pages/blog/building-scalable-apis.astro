@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Building Scalable APIs with Node.js | Blog">
+  <main class="section">
+    <article class="container post-content">
+      <p><a href="/blog" class="back-link">← Back to Blog</a></p>
+      <h1>Building Scalable APIs with Node.js</h1>
+      <p class="meta">Mar 12, 2026</p>
+      <p>Scalable APIs start with clear boundaries and predictable behavior.</p>
+      <p>
+        A maintainable approach keeps controllers thin, moves business logic to services, and includes
+        robust input validation from day one.
+      </p>
+      <p>
+        By investing in observability and consistent error responses, teams can scale their platform
+        without slowing down feature delivery.
+      </p>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  .post-content {
+    max-width: 760px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+  }
+  .meta { color: var(--muted); margin-top: -0.25rem; }
+  .back-link { color: var(--secondary); font-weight: 700; }
+</style>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#215eea"/>
+      <stop offset="100%" stop-color="#3ad3b0"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="#0e1a34"/>
+  <circle cx="120" cy="100" r="60" fill="url(#g2)" opacity="0.35"/>
+  <rect x="70" y="60" width="500" height="240" rx="16" fill="none" stroke="#4da3ff" stroke-width="2"/>
+  <text x="100" y="200" fill="#dce6ff" font-size="42" font-family="Arial">ShopSmart</text>
+</svg>

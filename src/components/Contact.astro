@@ -1,0 +1,56 @@
+<section id="contact" class="section reveal">
+  <div class="container contact-wrap">
+    <div>
+      <h2 class="section-title">Contact</h2>
+      <p class="section-subtitle">
+        Open to new opportunities. If you have a role or project in mind, feel free to reach out.
+      </p>
+      <div class="socials">
+        <a href="mailto:leonardogarcarr23@gmail.com" target="_blank" rel="noreferrer">Gmail</a>
+        <a href="https://github.com/leonardog01" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/leonardog01/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </div>
+    <form id="contact-form" class="contact-form">
+      <label>
+        Name
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contact-wrap { display: grid; gap: 1.25rem; }
+  .socials { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .socials a { color: var(--primary); font-weight: 700; }
+  .contact-form {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem;
+    display: grid;
+    gap: 0.8rem;
+  }
+  label { display: grid; gap: 0.35rem; font-weight: 600; }
+  input, textarea {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.65rem 0.8rem;
+    font: inherit;
+  }
+  @media (min-width: 900px) {
+    .contact-wrap { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+</style>
