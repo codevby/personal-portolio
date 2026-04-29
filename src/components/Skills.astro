@@ -66,12 +66,14 @@ const skillGroups = [
     <div class="skill-grid">
       {skillGroups.map((group) => (
         <article class="skill-row">
-          <h3>{group.title}</h3>
-          <div class="badges-row">
+          <h3 id={`skills-${group.title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-")}`}>{group.title}</h3>
+          <ul class="badges-row" role="list" aria-labelledby={`skills-${group.title.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-")}`}>
             {group.badges.map((badge) => (
-              <img class="skill-badge" src={badge.src} alt={badge.name} loading="lazy" />
+              <li>
+                <img class="skill-badge" src={badge.src} alt={badge.name} loading="lazy" />
+              </li>
             ))}
-          </div>
+          </ul>
         </article>
       ))}
     </div>
@@ -97,7 +99,10 @@ const skillGroups = [
   .badges-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.55rem;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
   .skill-badge {
     height: 34px;

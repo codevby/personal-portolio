@@ -6,15 +6,15 @@
         Open to new opportunities. If you have a role or project in mind, feel free to reach out.
       </p>
       <div class="socials">
-        <a class="social-btn gmail" href="mailto:leonardogarcarr23@gmail.com" target="_blank" rel="noreferrer">
+        <a class="social-btn gmail" href="mailto:leonardogarcarr23@gmail.com">
           <img src="/icons/gmail.svg" alt="" aria-hidden="true" loading="lazy" />
           <span>Gmail</span>
         </a>
-        <a class="social-btn github" href="https://github.com/leonardog01" target="_blank" rel="noreferrer">
+        <a class="social-btn github" href="https://github.com/leonardog01" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile (opens in a new tab)">
           <img src="/icons/github.svg" alt="" aria-hidden="true" loading="lazy" />
           <span>GitHub</span>
         </a>
-        <a class="social-btn linkedin" href="https://www.linkedin.com/in/leonardog01/" target="_blank" rel="noreferrer">
+        <a class="social-btn linkedin" href="https://www.linkedin.com/in/leonardog01/" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile (opens in a new tab)">
           <img src="/icons/linkedin.svg" alt="" aria-hidden="true" loading="lazy" />
           <span>LinkedIn</span>
         </a>
@@ -34,12 +34,15 @@
   .social-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
-    border-radius: 14px;
-    padding: 0.9rem 1.2rem;
+    gap: var(--space-3);
+    min-height: 44px;
+    min-width: 44px;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4) var(--space-5);
     color: #fff;
     font-weight: 800;
-    font-size: 1.05rem;
+    font-size: var(--text-lg);
+    text-decoration: none;
     box-shadow: var(--shadow);
   }
   .social-btn img {
@@ -54,7 +57,7 @@
     filter: brightness(1.07);
   }
   .contact-note {
-    margin: 1.15rem 0 0;
+    margin: var(--space-5) 0 0;
     color: var(--muted);
     font-weight: 700;
     letter-spacing: 0.02em;

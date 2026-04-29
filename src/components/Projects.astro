@@ -18,59 +18,65 @@ const projects = [
     <p class="section-subtitle">
       A selection of software and creative projects I have worked on.
     </p>
-    <div class="grid cards">
+    <ul class="grid cards" role="list">
       {
         projects.map((project) => (
-          <article class="card">
-            <img
-              src={project.image}
-              alt={`${project.title} cover`}
-              loading="lazy"
-            />
-            <div class="card-content">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <p class="tech">{project.tech.join(" • ")}</p>
-              <div class="links">
-                <a
-                  class="demo-btn"
-                  href={project.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M10.5 3a7.5 7.5 0 1 0 4.71 13.34l4.22 4.22a1 1 0 0 0 1.41-1.41l-4.22-4.22A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z" />
-                  </svg>
-                  <span>{project.demoLabel}</span>
-                </a>
+          <li>
+            <article class="card">
+              <img
+                src={project.image}
+                alt={`${project.title} cover`}
+                loading="lazy"
+              />
+              <div class="card-content">
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <p class="tech">{project.tech.join(" • ")}</p>
+                <div class="links">
+                  <a
+                    class="demo-btn"
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.demoLabel} (opens in a new tab)`}
+                  >
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M10.5 3a7.5 7.5 0 1 0 4.71 13.34l4.22 4.22a1 1 0 0 0 1.41-1.41l-4.22-4.22A7.5 7.5 0 0 0 10.5 3Zm0 2a5.5 5.5 0 1 1 0 11a5.5 5.5 0 0 1 0-11Z" />
+                    </svg>
+                    <span>{project.demoLabel}</span>
+                  </a>
+                </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </li>
         ))
       }
-    </div>
+    </ul>
   </div>
 </section>
 
 <style>
   .cards {
     grid-template-columns: 1fr;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow);
   }
   .card-content {
-    padding: 1rem;
+    padding: var(--space-4);
   }
   .card h3 {
-    margin: 0 0 0.3rem;
+    margin: 0 0 var(--space-2);
   }
   .card p {
-    margin: 0.45rem 0;
+    margin: var(--space-2) 0;
     color: var(--muted);
   }
   .tech {
@@ -80,19 +86,22 @@ const projects = [
   }
   .links {
     display: flex;
-    gap: 1rem;
-    margin-top: 0.8rem;
+    gap: var(--space-4);
+    margin-top: var(--space-3);
   }
   .demo-btn {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-2);
+    min-height: 44px;
+    min-width: 44px;
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 0.55rem 0.85rem;
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
+    text-decoration: none;
     color: var(--primary);
-    background: color-mix(in oklab, var(--surface) 90%, var(--primary));
+    background: var(--surface-elevated);
     font-weight: 700;
   }
   .demo-btn svg {
@@ -107,7 +116,7 @@ const projects = [
   }
   @media (min-width: 768px) {
     .cards {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 </style>

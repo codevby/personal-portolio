@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 const entries = [
   {
     title: "Building Scalable APIs with Node.js",
@@ -17,34 +19,44 @@ const entries = [
 ---
 
 <BaseLayout title="Blog | Leonardo Garcia">
-  <main class="section">
+  <Header />
+  <main id="main-content" class="section">
     <div class="container">
       <h1 class="section-title">Blog</h1>
       <p class="section-subtitle">Notes about software development, architecture, and performance.</p>
-      <div class="posts">
+      <ul class="posts">
         {entries.map((entry) => (
-          <article class="post">
-            <h2><a href={entry.href}>{entry.title}</a></h2>
-            <p>{entry.description}</p>
-            <small>{entry.date}</small>
-          </article>
+          <li class="post">
+            <article>
+              <h2><a href={entry.href}>{entry.title}</a></h2>
+              <p>{entry.description}</p>
+              <small>{entry.date}</small>
+            </article>
+          </li>
         ))}
-      </div>
-      <p><a href="/" class="back-link">← Back to Home</a></p>
+      </ul>
+      <p><a href="/" class="back-link">Back to Home</a></p>
     </div>
   </main>
+  <Footer />
 </BaseLayout>
 
 <style>
-  .posts { display: grid; gap: 1rem; }
+  .posts {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
   .post {
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1rem;
+    border-radius: var(--radius-lg);
+    padding: var(--space-4);
     background: var(--surface);
   }
   .post h2 { margin: 0 0 0.4rem; }
   .post p { margin: 0 0 0.6rem; color: var(--muted); }
   .post a { color: var(--primary); }
-  .back-link { color: var(--secondary); font-weight: 700; }
+  .back-link { color: var(--secondary); font-weight: 700; text-decoration: none; }
 </style>
